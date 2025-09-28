@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Enums\ThemeMode;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -28,12 +29,12 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')->brandName('Filament-Shop')
-
+             ->defaultThemeMode(ThemeMode::Dark)
             ->login()->registration()->passwordReset()->simplePageMaxContentWidth(Width::Small)
             ->sidebarCollapsibleOnDesktop()->collapsedSidebarWidth('9rem')->sidebarWidth('18rem')
             ->spa(hasPrefetching:true)->maxContentWidth(Width::Full)
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Yellow,
             ])
             ->databaseTransactions()
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
