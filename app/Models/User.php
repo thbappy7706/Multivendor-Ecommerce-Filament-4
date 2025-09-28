@@ -82,6 +82,16 @@ class User extends Authenticatable
         return $this->hasMany(BrowsingHistory::class);
     }
 
+    /**
+     * Get the addresses for the user.
+     *
+     * @return HasMany<UserAddress>
+     */
+    public function userAddresses(): HasMany
+    {
+        return $this->hasMany(UserAddress::class);
+    }
+
     public function hasRole(string|array $roles): bool
     {
         $rolesIds = $this->role->whereIn('name', $roles)->pluck('id')->toArray();
