@@ -35,9 +35,5 @@ class ListUsers extends ListRecords
         ];
     }
 
-    public function getDefaultActiveTab(): string | int | null
-    {
-        return 'User';
-    }
 
 }
