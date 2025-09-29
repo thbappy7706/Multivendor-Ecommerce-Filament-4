@@ -2,9 +2,7 @@
 
 namespace App\Filament\Resources\Users\Tables;
 
-use Filament\Actions\ActionGroup;
 use Filament\Actions\BulkActionGroup;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
@@ -49,13 +47,8 @@ class UsersTable
                 TrashedFilter::make(),
             ])
             ->recordActions([
-                ActionGroup::make(
-                    [
-                        ViewAction::make(),
-                        EditAction::make(),
-                        DeleteAction::make(),
-                    ],
-                )
+                ViewAction::make(),
+                EditAction::make(),
             ])
             ->toolbarActions([
                 BulkActionGroup::make([
